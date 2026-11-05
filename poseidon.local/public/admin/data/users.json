@@ -1,0 +1,22 @@
+{
+    "admin": {
+        "pass": "poseidon2025",
+        "role": "admin",
+        "name": "Главный Админ"
+    },
+    "25": {
+        "pass": "25",
+        "role": "editor",
+        "name": "editor"
+    },
+    "26": {
+        "pass": "26",
+        "role": "operator",
+        "name": "operator"
+    },
+    "ivan": {
+        "pass": "111",
+        "role": "admin",
+        "name": "ivan"
+    }
+}
