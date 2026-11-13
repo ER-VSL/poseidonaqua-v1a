@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Title, Description, Keywords -->
+    <title>Доставка питьевой воды в Якутске | Посейдон</title>
+    <meta name="description" content="Служба доставки артезианской питьевой воды 19 литров «Посейдон» в Якутске. 7 ступеней очистки. Быстрая доставка воды на дом и в офис.">
+    <meta name="keywords" content="доставка воды Якутск, питьевая вода 19 литров, артезианская вода Посейдон, заказать воду Якутск">
+    <meta property="og:title" content="Посейдон — доставка воды в Якутске">
+    <meta property="og:image" content="uploads/medium_banner_2_3de144b378.webp">
+    
+    <!-- ПРЕДЗАГРУЗКА ТОЛЬКО ГЛАВНЫХ ЭЛЕМЕНТОВ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="uploads/bg_b1b50471cd.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="uploads/medium_bottle_primary_9fb013c4b3.webp" fetchpriority="high">
+    
+    <!-- Асинхронная загрузка шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --deep: #1a365d; --blue: #2b6cb0; --aqua: #4299e1; --light: #ebf8ff; --white: #ffffff; --gray: #64748b; --radius: 24px; --error: #ff4d4f; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--deep); background: var(--white); overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body.modal-open { overflow: hidden; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { width: min(1200px, 92%); margin-inline: auto; }
+        
+        /* ШАПКА */
+        .header { position: fixed; inset: 0 0 auto 0; z-index: 100; padding: 22px 0; transition: background 0.3s, box-shadow 0.3s, padding 0.3s; }
+        .header.scrolled { background: rgba(255, 255, 255, 0.98); box-shadow: 0 8px 30px rgba(26, 54, 93, 0.08); padding: 14px 0; }
+        .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.4rem; color: var(--white); transition: color 0.3s; }
+        .header.scrolled .logo { color: var(--deep); }
+        .logo__img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+        .nav { display: flex; gap: 22px; font-weight: 600; font-size: 0.92rem; flex: 1; justify-content: center; }
+        .nav a { position: relative; padding-bottom: 4px; color: rgba(255, 255, 255, 0.92); transition: color 0.3s; }
+        .header.scrolled .nav a { color: var(--deep); }
+        .nav a::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: var(--aqua); transition: width 0.3s; }
+        .nav a:hover::after { width: 100%; }
+        
+        .phones { display: flex; flex-direction: column; align-items: flex-end; font-weight: 600; font-size: 0.88rem; color: var(--white); transition: color 0.3s; }
+        .header.scrolled .phones { color: var(--deep); }
+        .phones a { padding: 4px 0; display: block; }
+        .phones a:hover { color: var(--aqua); }
+        .phones .hours { font-size: 0.78rem; color: rgba(255, 255, 255, 0.7); font-weight: 400; margin-top: 4px; }
+        .header.scrolled .phones .hours { color: var(--gray); }
+
+        /* ГЛАВНЫЙ ЭКРАН */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 160px 0 120px; overflow: hidden; background: var(--deep); }
+        .hero__bg { position: absolute; inset: 0; background: url('uploads/bg_b1b50471cd.webp') center/cover no-repeat; opacity: 0.6; }
+        .hero__overlay { position: absolute; inset: 0; background: linear-gradient(110deg, rgba(26, 54, 93, 0.95) 0%, rgba(43, 108, 176, 0.8) 55%, rgba(66, 153, 225, 0.4) 100%); }
+        .hero .container { position: relative; z-index: 2; }
+        .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+        .hero__badge { display: inline-flex; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.25); color: var(--white); padding: 8px 18px; border-radius: 999px; margin-bottom: 26px; }
+        .hero__title { font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.1; color: var(--white); font-weight: 800; margin-bottom: 22px; }
+        .hero__title span { background: linear-gradient(90deg, var(--aqua), #7ee8fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero__text { font-size: 1.05rem; color: rgba(255, 255, 255, 0.82); max-width: 500px; margin-bottom: 32px; }
+        
+        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 15px 32px; border-radius: 999px; font-weight: 700; border: none; cursor: pointer; font-family: inherit; font-size: 1rem; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
+        .btn--primary { background: linear-gradient(135deg, var(--aqua), var(--blue)); color: var(--white); box-shadow: 0 14px 32px rgba(66, 153, 225, 0.4); }
+        .btn--primary:hover { transform: translateY(-3px); box-shadow: 0 20px 42px rgba(66, 153, 225, 0.55); }
+        .btn--ghost { background: transparent; color: var(--white); border: 2px solid rgba(255, 255, 255, 0.45); }
+        .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); transform: translateY(-3px); }
+        
+        .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+        .hero__bottle { position: absolute; right: -30px; bottom: -60px; width: min(320px, 26vw); height: auto; opacity: 0.85; animation: floatBottle 7s ease-in-out infinite; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.4)); z-index: 1; pointer-events: none; }
+        @keyframes floatBottle { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
+        .wave { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; z-index: 3; }
+        .wave svg { width: 100%; height: 90px; }
+
+        /* Фасад для Rutube */
+        .facade { position: relative; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.15); background: #000; cursor: pointer; aspect-ratio: 16/9; }
+        .facade img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        .facade__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; background: rgba(0,0,0,0.6); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .facade__play::after { content: ''; display: block; width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #fff; }
+        .facade:hover .facade__play { background: #ff0000; }
+
+        /* СЕКЦИИ */
+        .section { padding: 100px 0; position: relative; }
+        .section--light { background: var(--light); }
+        .section__head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+        .section__eyebrow { font-size: 0.76rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--aqua); margin-bottom: 12px; display: block; }
+        .section__title { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 800; margin-bottom: 14px; }
+
+        /* ПРЕИМУЩЕСТВА */
+        .advantages { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+        .adv-card { background: var(--white); border-radius: var(--radius); padding: 34px 28px; box-shadow: 0 12px 35px rgba(26, 54, 93, 0.07); transition: transform 0.3s; }
+        .adv-card:hover { transform: translateY(-8px); }
+        .adv-card__icon { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 20px; background: rgba(66, 153, 225, 0.1); color: var(--blue); }
+        .adv-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .adv-card p { font-size: 0.92rem; color: var(--gray); }
+
+        /* ТОВАРЫ */
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+        .product { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 16px 40px rgba(26, 54, 93, 0.08); display: flex; flex-direction: column; transition: transform 0.3s; }
+        .product:hover { transform: translateY(-10px); }
+        .product__img { height: 320px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #f7fbfe; }
+        .product__img img { max-height: 100%; max-width: 90%; object-fit: contain; }
+        .product__body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .product__title-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+        .product__body h3 { font-size: 1.15rem; font-weight: 700; }
+        .product__price { font-size: 1.15rem; font-weight: 700; }
+        .product__body p { font-size: 0.9rem; color: var(--gray); margin-bottom: 20px; flex: 1; }
+        .product__btn { width: 100%; padding: 14px; border-radius: 999px; background: var(--blue); color: var(--white); font-weight: 700; border: none; cursor: pointer; transition: background 0.25s; font-family: inherit; font-size: 1rem; display: block; text-align: center; }
+        .product__btn:hover { background: var(--deep); }
+
+        /* КАРТА (ФАСАД) */
+        .map-wrap { border-radius: 32px; overflow: hidden; box-shadow: 0 20px 50px rgba(26, 54, 93, 0.12); margin-bottom: 40px; }
+        .map-facade { position: relative; width: 100%; height: 450px; display: flex; align-items: center; justify-content: center; background: #e2e8f0; cursor: pointer; }
+        .map-facade img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+        .map-facade__btn { position: absolute; background: var(--deep); color: var(--white); padding: 15px 30px; border-radius: 999px; font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: transform 0.2s; display: flex; align-items: center; gap: 10px; }
+        .map-facade:hover .map-facade__btn { transform: scale(1.05); background: var(--blue); }
+
+        /* ГАЛЕРЕЯ */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+        .gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; background: var(--light); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* ПРИЛОЖЕНИЕ */
+        .app-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; background: linear-gradient(135deg, var(--light) 0%, #d6ecfa 100%); border-radius: 32px; padding: 64px; }
+        .app-content h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 16px; }
+        .app-content p { color: var(--gray); margin-bottom: 32px; font-size: 1.05rem; }
+        .app-stores { display: flex; gap: 16px; flex-wrap: wrap; }
+        .store-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--deep); color: var(--white); padding: 10px 20px; border-radius: 12px; transition: transform 0.2s; }
+        .store-btn:hover { transform: translateY(-3px); background: #12294a; }
+        .store-btn svg { width: 28px; height: 28px; }
+        .store-btn div { display: flex; flex-direction: column; text-align: left; line-height: 1.1; }
+        .store-btn small { font-size: 0.65rem; opacity: 0.8; }
+        .store-btn strong { font-size: 0.95rem; font-weight: 700; white-space: nowrap; }
+
+        /* ДОКУМЕНТЫ */
+        .documents-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .doc-card { background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(26, 54, 93, 0.08); transition: transform 0.2s; }
+        .doc-card:hover { transform: translateY(-5px); }
+        .doc-card img { width: 100%; height: 280px; object-fit: cover; }
+        .doc-card span { display: block; padding: 14px; text-align: center; font-weight: 600; font-size: 0.9rem; }
+
+        /* НОВОСТИ */
+        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+        .news-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(26, 54, 93, 0.08); transition: transform 0.2s; }
+        .news-card:hover { transform: translateY(-5px); }
+        .news-card img { width: 100%; height: 210px; object-fit: cover; }
+        .news-card__body { padding: 22px; }
+        .news-card__body h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .news-card__body time { color: var(--gray); font-size: 0.85rem; display: block; margin-bottom: 10px; }
+
+        /* ОТЗЫВЫ */
+        .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .review { background: var(--white); border-radius: var(--radius); padding: 30px 26px; box-shadow: 0 10px 30px rgba(26, 54, 93, 0.08); }
+        .review__stars { color: #f5b301; margin-bottom: 14px; font-size: 1.1rem; }
+        .review p { font-style: italic; color: var(--gray); margin-bottom: 20px; }
+        .review__author { display: flex; align-items: center; gap: 12px; }
+        .review__avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--aqua); color: #fff; display: grid; place-items: center; font-weight: 700; }
+        .review__name { font-weight: 700; font-size: 0.95rem; }
+        .review__role { font-size: 0.8rem; color: var(--gray); }
+
+        /* ПОДВАЛ */
+        .footer { background: var(--deep); color: rgba(255, 255, 255, 0.75); padding: 64px 0 30px; font-size: 0.9rem; }
+        .footer__grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer h3 { color: var(--white); margin-bottom: 18px; font-size: 1.1rem; }
+        .footer__links { display: grid; gap: 10px; }
+        .footer a:hover { color: var(--aqua); }
+        .footer__bottom { border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;}
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* МОДАЛЬНОЕ ОКНО */
+        .modal { position: fixed; inset: 0; z-index: 10000; background: rgba(26, 54, 93, 0.9); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+        .modal.active { opacity: 1; pointer-events: auto; }
+        .modal__content { background: var(--white); border-radius: 28px; padding: 44px 40px; width: min(460px, 90%); position: relative; transform: translateY(20px) scale(0.95); transition: transform 0.2s; }
+        .modal.active .modal__content { transform: translateY(0) scale(1); }
+        .modal__close { position: absolute; top: 16px; right: 20px; font-size: 32px; color: var(--gray); cursor: pointer; border: none; background: none; }
+        .modal__close:hover { color: var(--deep); }
+        
+        .modal-form { display: flex; flex-direction: column; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 4px; }
+        .modal-form input[type="text"], .modal-form input[type="tel"] { width: 100%; padding: 15px 18px; border-radius: 14px; border: 1.5px solid #dce7f0; background: #f7fbfe; font-family: inherit; font-size: 0.95rem; }
+        .modal-form input:focus { border-color: var(--aqua); outline: none; }
+        .modal-form input.is-invalid { border-color: var(--error); background-color: #fff1f0; }
+        .error-text { display: none; font-size: 0.75rem; color: var(--error); font-weight: 500; margin-left: 4px; }
+        .error-text.visible { display: block; }
+
+        .checkbox-label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.8rem; color: var(--gray); margin-top: 4px; line-height: 1.4; }
+        .checkbox-input { display: none; }
+        .checkbox-custom { width: 20px; height: 20px; border: 2px solid #dce7f0; border-radius: 6px; background: #f7fbfe; flex-shrink: 0; position: relative; margin-top: 1px; }
+        .checkbox-input:checked + .checkbox-custom { background: var(--aqua); border-color: var(--aqua); }
+        .checkbox-input:checked + .checkbox-custom::after { content: ''; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+        .checkbox-text a { color: var(--blue); text-decoration: underline; }
+
+        /* ПОЛИТИКИ */
+        .policy-modal { position: fixed; inset: 0; z-index: 20000; background: rgba(26, 54, 93, 0.85); display: flex; justify-content: center; align-items: flex-start; overflow-y: auto; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 40px 20px; }
+        .policy-modal.active { opacity: 1; pointer-events: auto; }
+        .policy-container { background: #fff; width: min(210mm, 100%); border-radius: 8px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.3s ease; }
+        .policy-modal.active .policy-container { transform: translateY(0); }
+        .policy-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: var(--deep); color: #fff; border-radius: 8px 8px 0 0; }
+        .policy-toolbar button { padding: 10px 24px; border: none; border-radius: 999px; cursor: pointer; background: var(--aqua); color: #fff; font-weight: 700; }
+        .policy-close { background: transparent; border: none; color: white; font-size: 28px; cursor: pointer; }
+        .paper { padding: 24mm 20mm; font-size: 11.5pt; line-height: 1.65; color: #333; }
+        .paper h1 { font-size: 18pt; margin-bottom: 20px; color: var(--deep); text-align: center; }
+        .paper h2 { font-size: 14pt; margin-top: 20px; margin-bottom: 10px; color: var(--deep); }
+        .paper p { margin-bottom: 10px; }
+        .paper ul { margin-left: 20px; margin-bottom: 10px; }
+        
+        @media (max-width: 960px) { .nav { display: none; } .hero__grid { grid-template-columns: 1fr; } .hero__bottle { display: none; } .app-grid { grid-template-columns: 1fr; padding: 40px 28px; } .footer__grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 640px) { .phones { display: none; } .hero__actions { flex-direction: column; } .btn { width: 100%; } .footer__grid { grid-template-columns: 1fr; } .map-facade { height: 300px; } }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#hero" class="logo">
+                <img src="uploads/apple-touch-icon.webp" alt="Логотип Посейдон" class="logo__img" width="48" height="48">
+                <span>Посейдон</span>
+            </a>
+            <nav class="nav">
+                <a href="#hero">Главная</a>
+                <a href="#gallery">Фотогалерея</a>
+                <a href="#products">Акции</a>
+                <a href="#documents">Документы</a>
+                <a href="#news">Новости</a>
+            </nav>
+            <div class="phones">
+                <a href="tel:+79681510110">+7 968 151-01-10</a>
+                <a href="tel:+74112732424">+7 4112 73-24-24</a>
+                <a href="tel:+79142743434">+7 914 274-34-34</a>
+                <div class="hours">09:00 – 20:00</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__overlay"></div>
+            <img class="hero__bottle" src="uploads/medium_bottle_primary_9fb013c4b3.webp" alt="Бутыль питьевой воды 19 литров" fetchpriority="high" width="407" height="750">
+            <div class="container">
+                <div class="hero__grid">
+                    <div class="hero__content">
+                        <div class="hero__badge">Доставка с 2020 года</div>
+                        <!-- Внедрен ключ: Доставка питьевой воды в Якутске -->
+                        <h1 class="hero__title">Доставка питьевой воды <span>«Посейдон»</span> в Якутске</h1>
+                        <p class="hero__text">Артезианская вода в бутылях 19 литров после 7 ступеней очистки. Привезём в день заказа по городу.</p>
+                        <div class="hero__actions">
+                            <a href="#products" class="btn btn--primary">Выбрать воду</a>
+                            <button class="btn btn--ghost open-modal-btn">Быстрый заказ</button>
+                        </div>
+                    </div>
+                    <div class="facade" id="video-facade" data-video-src="https://rutube.ru/play/embed/7d7d9de3a2004a3d3a65869aea0791ab/?r=wd&autoplay=1" title="Видео о производстве">
+                        <img src="uploads/medium_bottle_primary_9fb013c4b3.webp" alt="Смотреть видео о производстве" loading="lazy" width="600" height="338">
+                        <div class="facade__play"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wave"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,50 L1440,90 L0,90 Z" fill="#ffffff"/></svg></div>
+        </section>
+
+        <!-- ... (ОСТАЛЬНОЙ КОД БЕЗ ИЗМЕНЕНИЙ, ПОЛНОСТЬЮ КАК В ПРЕДЫДУЩЕМ ОТВЕТЕ) ... -->
+        
+        <section class="section" id="advantages">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Почему мы</span>
+                    <h2 class="section__title">Вода, которой доверяют</h2>
+                </div>
+                <div class="advantages">
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M9 14l2 2 4-4"/></svg></div>
+                        <h3>7 ступеней очистки</h3>
+                        <p>Многоступенчатая система фильтрации и УФ-стерилизатор.</p>
+                    </div>
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                        <h3>Быстрая доставка</h3>
+                        <p>Привезём воду прямо к порогу — часто в день заказа.</p>
+                    </div>
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                        <h3>40 000+ клиентов</h3>
+                        <p>Нам доверяют семьи, офисы и производства с 2020 года.</p>
+                    </div>
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg></div>
+                        <h3>Бонусная система</h3>
+                        <p>Меняйте бонусы на полезные товары в мобильном приложении.</p>
+                    </div>
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                        <h3>Автоматизированный цех</h3>
+                        <p>Бесконтактная линия мойки бутылей и розлива воды.</p>
+                    </div>
+                    <div class="adv-card reveal">
+                        <div class="adv-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                        <h3>Мобильное приложение</h3>
+                        <p>Скачивайте наше приложение и заказывайте в 2 клика.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--light" id="products">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Акции</span>
+                    <h2 class="section__title">Наш ассортимент</h2>
+                </div>
+                <div id="dynamic-promos" class="reveal visible" style="display: none; margin-bottom: 40px;"></div>
+                <div class="products">
+                    <article class="product reveal">
+                        <div class="product__img"><img src="uploads/medium_bottle_primary_9fb013c4b3.webp" alt="Вода 19 л" loading="lazy" width="300" height="553"></div>
+                        <div class="product__body">
+                            <div class="product__title-row"><h3>Вода 19 л.</h3><div class="product__price">280 руб.</div></div>
+                            <p>Чистая питьевая вода</p>
+                            <a href="https://wa.me/+79142743434/?text=" class="product__btn" target="_blank" rel="noopener">Сделать заказ</a>
+                        </div>
+                    </article>
+                    <article class="product reveal">
+                        <div class="product__img"><img src="uploads/medium_bottle_mineral_c843e04ccc.webp" alt="Вода минеральная 19 л" loading="lazy" width="300" height="553"></div>
+                        <div class="product__body">
+                            <div class="product__title-row"><h3>Вода 19 л.</h3><div class="product__price">300 руб.</div></div>
+                            <p>Минерализованная вода</p>
+                            <a href="https://wa.me/+79142743434/?text=" class="product__btn" target="_blank" rel="noopener">Сделать заказ</a>
+                        </div>
+                    </article>
+                    <article class="product reveal">
+                        <div class="product__img"><img src="uploads/medium_bottle_empty_b9c5c6b055.webp" alt="Тара 19 л" loading="lazy" width="300" height="553"></div>
+                        <div class="product__body">
+                            <div class="product__title-row"><h3>Тара 19 л.</h3><div class="product__price">450 руб.</div></div>
+                            <p>Возвратная тара</p>
+                            <a href="https://wa.me/+79142743434/?text=" class="product__btn" target="_blank" rel="noopener">Сделать заказ</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="zone">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Зона доставки</span>
+                    <h2 class="section__title">Карта доставки</h2>
+                </div>
+                <div class="map-wrap reveal">
+                    <div class="map-facade" id="map-facade">
+                        <img src="uploads/bg_b1b50471cd.webp" alt="Карта зоны доставки" loading="lazy" width="1200" height="450">
+                        <div class="map-facade__btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Показать карту
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--light" id="delivery">
+            <div class="container">
+                <div class="delivery-banner reveal" style="background: url('uploads/bg_b1b50471cd.webp') center/cover; position: relative; padding: 64px 48px; text-align: center; color: #fff; border-radius: 32px; overflow: hidden;">
+                    <div style="position: absolute; inset: 0; background: rgba(26,54,93,0.8);"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <h2>Доставим воду туда, где она нужна</h2>
+                        <p style="margin-bottom: 20px;">Оставьте заявку — перезвоним в течение 10 минут.</p>
+                        <button class="btn btn--primary open-modal-btn">Оставить заявку</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="gallery">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Фотогалерея</span>
+                    <h2 class="section__title">Наше производство</h2>
+                </div>
+                <div class="gallery-grid reveal visible" id="static-gallery">
+                    <div class="gallery-item"><img src="uploads/medium_P1114127_7b59bd9fb6.webp" alt="Автоматизированная линия розлива" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114030_f06865154d.webp" alt="Склад готовой продукции" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114019_c76d5b77b9.webp" alt="Процесс очистки воды" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114017_c43b0b65e1.webp" alt="Упаковка бутылей" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114016_226a16a6f3.webp" alt="Контроль качества" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114015_185a6988d3.webp" alt="Цех розлива" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114008_5c49601de4.webp" alt="Работа оператора" loading="lazy" width="400" height="300"></div>
+                    <div class="gallery-item"><img src="uploads/medium_P1114007_d5b64223b9.webp" alt="Мойка бутылей" loading="lazy" width="400" height="300"></div>
+                </div>
+                <div class="gallery-grid reveal visible" id="dynamic-gallery" style="display: none; margin-top: 20px;"></div>
+            </div>
+        </section>
+
+        <section class="section section--light" id="app">
+            <div class="container">
+                <div class="app-grid reveal">
+                    <div class="app-content">
+                        <span class="section__eyebrow">Приложение</span>
+                        <h2>Заказывайте в 2 клика</h2>
+                        <p>Скачивайте мобильное приложение «Посейдон»: заказ воды, история доставок, бонусы и акции — всё в одном месте.</p>
+                        <div class="app-stores">
+                            <a href="https://apps.apple.com/ru/app/посейдон/id1565813042" class="store-btn" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>
+                                <div><small>Загрузить в</small><strong>App Store</strong></div>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=org.vodopad.poseidon" class="store-btn" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+                                <div><small>Доступно в</small><strong>Google Play</strong></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="app-visual">
+                        <img src="uploads/medium_bottle_primary_9fb013c4b3.webp" alt="Бутыль" loading="lazy" width="300" height="553">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="documents">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Документы</span>
+                    <h2 class="section__title">Качество подтверждено</h2>
+                </div>
+                <div class="documents-grid reveal">
+                    <a class="doc-card" href="uploads/Deklaracziya_4c234fa4c1.pdf" target="_blank" rel="noopener"><img src="uploads/medium_Deklaracziya_76deefe868.webp" alt="Декларация" loading="lazy" width="200" height="280"><span>Декларация</span></a>
+                    <a class="doc-card" href="uploads/Svidetelstvo_IP_669411f77c.pdf" target="_blank" rel="noopener"><img src="uploads/medium_Svidetelstvo_IP_5149747231.webp" alt="Свидетельство ИП" loading="lazy" width="200" height="280"><span>Свидетельство ИП</span></a>
+                    <a class="doc-card" href="uploads/HASSP_e6c6589df5.pdf" target="_blank" rel="noopener"><img src="uploads/medium_HASSP_5f48ba6dac.webp" alt="ХАССП" loading="lazy" width="200" height="280"><span>ХАССП</span></a>
+                    <a class="doc-card" href="uploads/Programma_PK_a9954daf3f.pdf" target="_blank" rel="noopener"><img src="uploads/medium_Programma_PK_1d8e4ceb25.webp" alt="Программа ПК" loading="lazy" width="200" height="280"><span>Программа ПК</span></a>
+                    <a class="doc-card" href="uploads/TU_11_07_11_001_0122112407_2023_23cbbe6cb6.pdf" target="_blank" rel="noopener"><img src="uploads/medium_TU_11_07_11_001_0122112407_2023_1ab877dfcb.webp" alt="ТУ 11.07.11" loading="lazy" width="200" height="280"><span>ТУ 11.07.11</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--light" id="news">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Новости</span>
+                    <h2 class="section__title">Что нового</h2>
+                </div>
+                <div class="news-grid reveal visible" style="margin-bottom: 30px;">
+                    <article class="news-card">
+                        <img src="uploads/medium_8_O7_A0197_ad21aaa716.webp" alt="5-летний юбилей компании" loading="lazy" width="400" height="210">
+                        <div class="news-card__body">
+                            <h3>Сегодня компания Посейдон празднует свой 5-летний юбилей!</h3>
+                            <time datetime="2025-09-06">06 сентября 2025</time>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="uploads/medium_Whats_App_Image_2025_03_06_at_15_11_08_88d230a337.webp" alt="Чистая экология — залог здоровья" loading="lazy" width="400" height="210">
+                        <div class="news-card__body">
+                            <h3>Чистая экология - залог здоровья</h3>
+                            <time datetime="2025-03-04">04 марта 2025</time>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="uploads/medium_P1151514_266743ef03.webp" alt="Бонусы от Посейдона" loading="lazy" width="400" height="210">
+                        <div class="news-card__body">
+                            <h3>Ура! Наслаждаемся не только чистой водой, но и приятными бонусами от «Посейдона»!</h3>
+                            <time datetime="2025-03-04">04 марта 2025</time>
+                        </div>
+                    </article>
+                </div>
+                <div class="news-grid reveal visible" id="dynamic-news" style="display: none;"></div>
+            </div>
+        </section>
+
+        <section class="section" id="reviews">
+            <div class="container">
+                <div class="section__head reveal">
+                    <span class="section__eyebrow">Отзывы</span>
+                    <h2 class="section__title">Нас рекомендуют</h2>
+                </div>
+                <div class="reviews">
+                    <div class="review reveal">
+                        <div class="review__stars">★★★★★</div>
+                        <p>«Заказываем воду в офис уже второй год. Всегда вовремя, бутыли чистые, водители вежливые.»</p>
+                        <div class="review__author">
+                            <div class="review__avatar">АК</div>
+                            <div><div class="review__name">Анна К.</div><div class="review__role">Офис-менеджер</div></div>
+                        </div>
+                    </div>
+                    <div class="review reveal">
+                        <div class="review__stars">★★★★★</div>
+                        <p>«Попробовали минерализованную воду — вся семья перешла на неё. Вкус мягкий, никакого осадка.»</p>
+                        <div class="review__author">
+                            <div class="review__avatar">ДС</div>
+                            <div><div class="review__name">Дмитрий С.</div><div class="review__role">Постоянный клиент</div></div>
+                        </div>
+                    </div>
+                    <div class="review reveal">
+                        <div class="review__stars">★★★★★</div>
+                        <p>«Нравится, что можно вернуть тару и получить бонусы. Вода действительно чистая.»</p>
+                        <div class="review__author">
+                            <div class="review__avatar">ЕМ</div>
+                            <div><div class="review__name">Елена М.</div><div class="review__role">Клиент с 2021 года</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#hero" class="logo"><img src="uploads/apple-touch-icon.webp" alt="Логотип Посейдон" class="logo__img" width="48" height="48"><span>Посейдон</span></a>
+                    <p style="margin-top: 15px;">Доставка работает с 9:00 до 20:00.<br>Без выходных.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://wa.me/+79142743434/?text=" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px;">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20"><path d="M85.022 14.531C75.67 5.156 63.214 0 49.978 0 22.656 0 .424 22.232.424 49.554A49.607 49.607 0 0 0 7.031 74.33L0 100l26.272-6.897a49.403 49.403 0 0 0 23.683 6.026h.023C77.277 99.13 100 76.897 100 49.576c0-13.237-5.625-25.67-14.978-35.045Zm-35.044 76.25a41.115 41.115 0 0 1-20.983-5.736l-1.495-.893-15.58 4.085 4.151-15.201-.982-1.563c-4.13-6.562-6.294-14.13-6.294-21.92 0-22.7 18.482-41.182 41.205-41.182 11.005 0 21.34 4.285 29.107 12.075 7.768 7.79 12.545 18.125 12.522 29.13 0 22.723-18.95 41.205-41.651 41.205Zm22.589-30.848c-1.228-.625-7.321-3.616-8.46-4.018-1.138-.424-1.964-.625-2.79.625-.826 1.25-3.192 4.018-3.929 4.866-.714.826-1.45.938-2.678.313-7.277-3.639-12.054-6.496-16.853-14.732-1.272-2.188 1.273-2.032 3.639-6.764.401-.826.2-1.54-.112-2.165-.313-.625-2.79-6.719-3.817-9.196-1.005-2.411-2.031-2.076-2.79-2.12-.715-.046-1.54-.046-2.366-.046-.826 0-2.166.313-3.304 1.54-1.138 1.25-4.33 4.242-4.33 10.335 0 6.094 4.442 11.987 5.044 12.813.625.826 8.728 13.326 21.161 18.705 7.857 3.393 10.938 3.683 14.866 3.103 2.389-.357 7.322-2.991 8.348-5.893 1.027-2.902 1.027-5.38.715-5.893-.29-.558-1.116-.87-2.344-1.473Z" fill="currentColor"/></svg>
+                            Whatsapp
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Покупателям</h3>
+                    <div class="footer__links">
+                        <a href="#" onclick="document.getElementById('policyModal').classList.add('active'); return false;">Публичная оферта</a>
+                        <a href="#" onclick="document.getElementById('policyModal').classList.add('active'); return false;">Политика конфиденциальности</a>
+                        <a href="#" onclick="document.getElementById('personalDataPolicyModal').classList.add('active'); return false;">Согласие на обработку ПД</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Реквизиты</h3>
+                    <div class="footer__links">
+                        <span>ИП Бурнашев Федот Васильевич</span>
+                        <span>ИНН: 142702002057</span>
+                        <span>ОГРНИП: 317144700060599</span>
+                        <span>677000, Республика Саха (Якутия), г. Якутск</span>
+                    </div>
+                </div>
+                <div>
+                    <h3>Контакты</h3>
+                    <div class="footer__links">
+                        <a href="tel:+79681510110">+7 968 151-01-10</a>
+                        <a href="tel:+74112732424">+7 4112 73-24-24</a>
+                        <a href="tel:+79142743434">+7 914 274-34-34</a>
+                        <span style="margin-top: 10px;">г. Якутск, 203 мкр. 13 к.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <span>© 2025 ИП Бурнашев Ф. В.</span>
+                <span>Все права защищены.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО ЗАКАЗА -->
+    <div class="modal" id="orderModal">
+        <div class="modal__content">
+            <button class="modal__close" id="closeModalBtn">&times;</button>
+            <h3 style="margin-bottom: 10px;">Оставить заявку</h3>
+            <p style="margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">Заполните данные, и мы свяжемся с вами.</p>
+            
+            <form class="modal-form" id="deliveryForm" novalidate>
+                <div class="form-group">
+                    <input type="text" placeholder="Ваше имя" id="nameInput">
+                    <span class="error-text" id="nameError">Пожалуйста, введите ваше имя</span>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Телефон (только цифры)" id="phoneInput">
+                    <span class="error-text" id="phoneError">Введите минимум 10 цифр</span>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Адрес доставки" id="addressInput">
+                    <span class="error-text" id="addressError">Пожалуйста, введите адрес доставки</span>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox-input" id="agreeCheckbox">
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">Я согласен с <a href="#" id="openPolicyBtn">политикой конфиденциальности</a> и <a href="#" id="openPersonalDataBtn">политикой обработки данных</a>.</span>
+                    </label>
+                    <span class="error-text" id="agreeError">Необходимо поставить галочку</span>
+                </div>
+                <button type="submit" class="btn btn--primary" style="margin-top: 10px;">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ПОЛИТИКИ -->
+    <div class="policy-modal" id="policyModal">
+        <div class="policy-container">
+            <div class="policy-toolbar"><span>Политика конфиденциальности</span><button class="policy-close" id="closePolicyBtn">&times;</button></div>
+            <div class="paper">
+                <h1>Политика конфиденциальности</h1>
+                <p>Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в отношении всей информации, которую сайт ИП Бурнашев Федот Васильевич (далее – Компания) может получить о Пользователе во время использования сайта poseidonaqua.ru.</p>
+                
+                <h2>1. Определение терминов</h2>
+                <p>1.1. В настоящей Политике конфиденциальности используются следующие термины:</p>
+                <ul>
+                    <li>«Администрация сайта» – уполномоченные сотрудники на управления сайтом, действующие от имени Компании.</li>
+                    <li>«Персональные данные» – любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту персональных данных).</li>
+                    <li>«Обработка персональных данных» – любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств с персональными данными.</li>
+                </ul>
+
+                <h2>2. Общие положения</h2>
+                <p>2.1. Использование Пользователем сайта означает согласие с настоящей Политикой конфиденциальности и условиями обработки персональных данных Пользователя.</p>
+                <p>2.2. В случае несогласия с условиями Политики конфиденциальности Пользователь должен прекратить использование сайта.</p>
+
+                <h2>3. Предмет политики конфиденциальности</h2>
+                <p>3.1. Настоящая Политика конфиденциальности устанавливает обязательства Администрации сайта по неразглашению и обеспечению режима защиты конфиденциальности персональных данных, которые Пользователь предоставляет по запросу Администрации сайта при регистрации на сайте или при оформлении заказа.</p>
+                <p>3.2. Персональные данные, разрешённые к обработке в рамках настоящей Политики конфиденциальности, предоставляются Пользователем путём заполнения форм на сайте и включают в себя следующую информацию: ФИО Пользователя, контактный телефон, адрес доставки.</p>
+
+                <h2>4. Цели сбора персональной информации пользователя</h2>
+                <p>4.1. Персональные данные Пользователя Администрация сайта может использовать в целях:</p>
+                <ul>
+                    <li>Идентификации Пользователя, зарегистрированного на сайте, для оформления заказа и (или) заключения Договора купли-продажи товара дистанционным способом.</li>
+                    <li>Предоставления Пользователю эффективной клиентской и технической поддержки при возникновении проблем, связанных с использованием сайта.</li>
+                    <li>Осуществления рекламной деятельности с согласия Пользователя.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="policy-modal" id="personalDataPolicyModal">
+        <div class="policy-container">
+            <div class="policy-toolbar"><span>Политика обработки ПД</span><button class="policy-close" id="closePersonalDataPolicyBtn">&times;</button></div>
+            <div class="paper">
+                <h1>Политика обработки персональных данных</h1>
+                <p>Пользователь, оставляя заявку на сайте poseidonaqua.ru, принимает настоящее Согласие на обработку персональных данных (далее – Согласие). Действуя свободно, своей волей и в своем интересе, а также подтверждая свою дееспособность, Пользователь дает свое согласие ИП Бурнашев Федот Васильевич (далее – Оператор) на обработку своих персональных данных со следующими условиями:</p>
+
+                <h2>1. Данные, которые собираются</h2>
+                <p>1.1. Согласие дается на обработку персональных данных, как без использования средств автоматизации, так и с их использованием.</p>
+                <p>1.2. Согласие дается на обработку следующих персональных данных Пользователя:</p>
+                <ul>
+                    <li>Фамилия, Имя, Отчество;</li>
+                    <li>Контактный номер телефона;</li>
+                    <li>Адрес доставки.</li>
+                </ul>
+
+                <h2>2. Цели обработки персональных данных</h2>
+                <p>2.1. Целью обработки персональных данных является: оформление заказа, доставка товара, информирование о статусе заказа, связь с Пользователем в случае необходимости.</p>
+
+                <h2>3. Срок действия и порядок отзыва согласия</h2>
+                <p>3.1. Согласие на обработку персональных данных действует с момента предоставления Пользователем данных и до момента отзыва согласия.</p>
+                <p>3.2. Пользователь может отозвать свое согласие на обработку персональных данных в любой момент, направив уведомление на адрес электронной почты: <strong>burnashev0810@gmail.com</strong>.</p>
+                <p>3.3. После получения уведомления об отзыве согласия, Оператор прекращает обработку персональных данных и уничтожает их в срок, не превышающий 30 дней с даты получения уведомления.</p>
+
+                <h2>4. Заключительные положения</h2>
+                <p>4.1. Оператор обязуется не передавать полученные персональные данные третьим лицам, за исключением случаев, прямо предусмотренных законодательством РФ.</p>
+                <p>4.2. Оператор принимает необходимые организационные и технические меры для защиты персональной информации Пользователя от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- СКРИПТЫ (без изменений) -->
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            const facade = document.getElementById('video-facade');
+            if (facade) {
+                facade.addEventListener('click', function() {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = this.dataset.videoSrc;
+                    iframe.allow = "autoplay; encrypted-media; fullscreen";
+                    iframe.style.cssText = 'width:100%;height:100%;border:0;position:absolute;inset:0;';
+                    this.innerHTML = ''; this.appendChild(iframe);
+                });
+            }
+
+            const mapFacade = document.getElementById('map-facade');
+            if (mapFacade) {
+                mapFacade.addEventListener('click', function() {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = "https://yandex.ru/map-widget/v1/?um=constructor%3Ab50f5b6d5cd243ea9ba4b348ea9b1fd009cd93b4175348fc735ae96043fbccf9&source=constructor&scroll=false";
+                    iframe.style.cssText = 'width:100%;height:100%;border:0;position:absolute;inset:0;';
+                    this.innerHTML = ''; this.appendChild(iframe);
+                });
+            }
+
+            const modal = document.getElementById('orderModal');
+            const openBtns = document.querySelectorAll('.open-modal-btn');
+            const closeBtn = document.getElementById('closeModalBtn');
+            
+            openBtns.forEach(btn => btn.addEventListener('click', () => { modal.classList.add('active'); document.body.classList.add('modal-open'); }));
+            const closeModal = () => { modal.classList.remove('active'); document.body.classList.remove('modal-open'); };
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            const form = document.getElementById('deliveryForm');
+            const phoneInput = document.getElementById('phoneInput');
+            
+            phoneInput.addEventListener('input', (e) => { e.target.value = e.target.value.replace(/[^\d\s\+\(\)\-]/g, ''); clearError(e.target, document.getElementById('phoneError')); });
+            document.getElementById('nameInput').addEventListener('input', (e) => clearError(e.target, document.getElementById('nameError')));
+            document.getElementById('addressInput').addEventListener('input', (e) => clearError(e.target, document.getElementById('addressError')));
+            document.getElementById('agreeCheckbox').addEventListener('change', (e) => { if(e.target.checked) document.getElementById('agreeError').classList.remove('visible'); });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let isValid = true;
+                if (!document.getElementById('nameInput').value.trim()) { showError(document.getElementById('nameInput'), document.getElementById('nameError')); isValid = false; }
+                const digits = document.getElementById('phoneInput').value.replace(/\D/g, '');
+                if (digits.length < 10) { showError(document.getElementById('phoneInput'), document.getElementById('phoneError')); isValid = false; }
+                if (!document.getElementById('addressInput').value.trim()) { showError(document.getElementById('addressInput'), document.getElementById('addressError')); isValid = false; }
+                if (!document.getElementById('agreeCheckbox').checked) { document.getElementById('agreeError').classList.add('visible'); isValid = false; }
+                if (!isValid) return;
+
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = 'Отправка...'; submitBtn.disabled = true;
+
+                const formData = {
+                    name: document.getElementById('nameInput').value,
+                    phone: document.getElementById('phoneInput').value,
+                    address: document.getElementById('addressInput').value
+                };
+
+                fetch('save_order.php', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        this.innerHTML = '<div style="text-align:center; padding: 20px 0; color: var(--deep); font-weight: 600; font-size: 1.1rem;">Спасибо!<br><span style="font-weight: 400; font-size: 0.95rem; color: var(--gray); margin-top: 8px; display: inline-block;">Ваша заявка принята.</span></div>';
+                        setTimeout(closeModal, 2500);
+                    } else { alert('Ошибка: ' + data.message); submitBtn.innerHTML = 'Отправить'; submitBtn.disabled = false; }
+                })
+                .catch(() => { alert('Ошибка соединения с сервером.'); submitBtn.innerHTML = 'Отправить'; submitBtn.disabled = false; });
+            });
+
+            function showError(input, errEl) { input.classList.add('is-invalid'); errEl.classList.add('visible'); }
+            function clearError(input, errEl) { input.classList.remove('is-invalid'); errEl.classList.remove('visible'); }
+
+            const policyModal = document.getElementById('policyModal');
+            const personalDataPolicyModal = document.getElementById('personalDataPolicyModal');
+            document.getElementById('openPolicyBtn').addEventListener('click', (e) => { e.preventDefault(); policyModal.classList.add('active'); });
+            document.getElementById('openPersonalDataBtn').addEventListener('click', (e) => { e.preventDefault(); personalDataPolicyModal.classList.add('active'); });
+            document.getElementById('closePolicyBtn').addEventListener('click', () => policyModal.classList.remove('active'));
+            document.getElementById('closePersonalDataPolicyBtn').addEventListener('click', () => personalDataPolicyModal.classList.remove('active'));
+        });
+
+        window.addEventListener('load', () => {
+            const loadContent = () => {
+                const noCache = '?t=' + new Date().getTime();
+                fetch('admin/data/promos.json' + noCache).then(res => res.ok ? res.json() : []).then(data => {
+                    const container = document.getElementById('dynamic-promos');
+                    if (data && data.length > 0) { container.style.display = 'block'; container.innerHTML = data.map(item => `<div class="promo-banner"><img src="${item.image}" alt="Акция" loading="lazy" width="800" height="400">${item.title ? `<div class="promo-overlay"><h3>${item.title}</h3></div>` : ''}</div>`).join(''); }
+                }).catch(() => console.log('Акций нет'));
+
+                fetch('admin/data/gallery.json' + noCache).then(res => res.ok ? res.json() : []).then(data => {
+                    const container = document.getElementById('dynamic-gallery');
+                    if (data && data.length > 0) { container.style.display = 'grid'; container.innerHTML = data.map(item => `<div class="gallery-item"><img src="${item.image}" alt="Фото" loading="lazy" width="400" height="300"></div>`).join(''); }
+                }).catch(() => console.log('Галереи нет'));
+
+                fetch('admin/data/news.json' + noCache).then(res => res.ok ? res.json() : []).then(data => {
+                    const container = document.getElementById('dynamic-news');
+                    if (data && data.length > 0) { container.style.display = 'grid'; container.innerHTML = data.map(item => `<article class="news-card"><img src="${item.image}" alt="${item.title}" loading="lazy" width="400" height="210"><div class="news-card__body"><h3>${item.title}</h3><time style="color: var(--gray); font-size: 0.85rem;">${item.date}</time><p style="font-size: 0.9rem; color: var(--gray); margin-top: 10px;">${item.text}</p></div></article>`).join(''); }
+                }).catch(() => console.log('Новостей нет'));
+            };
+            if ('requestIdleCallback' in window) { requestIdleCallback(loadContent); } else { setTimeout(loadContent, 2000); }
+        });
+    </script>
+</body>
+</html>
